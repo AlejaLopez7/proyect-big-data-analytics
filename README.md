@@ -3,9 +3,9 @@ This repository contains information from the BigDataAnalytics project! Welcome
 
 ## Instalación de ubuntu
 
-## Creación de usurio hadoop en ubuntu
+### Creación de usurio hadoop en ubuntu
 ![image](https://user-images.githubusercontent.com/79612461/133336179-8d141879-3d21-4270-80ef-67dc5b7ad0d7.png)
-## Instalación de jdk en ubuntu
+### Instalación de jdk en ubuntu
 ```
 sudo apt update
 ```
@@ -60,5 +60,62 @@ sudo service ssh restart
 ssh localhost
 ```
 ![image](https://user-images.githubusercontent.com/79612461/133346823-2f91b4e8-b7c3-47f6-bda5-99e0afab55df.png)
+```
+ssh localhost
+```
+## Instalación de hadoop
+Ingresar y descargar la ultima version con el comando wget
+![image](https://user-images.githubusercontent.com/79612461/133347168-b7348919-9ac1-48ab-a701-91024c862155.png)
+![image](https://user-images.githubusercontent.com/79612461/133347174-d8fe0eec-cb8d-4ce6-a345-5d9712f1a2ae.png)
+```
+wget https://dlcdn.apache.org/hadoop/common/hadoop-<version>/hadoop-<version>.tar.gz
+```
+![image](https://user-images.githubusercontent.com/79612461/133347317-3a2463a3-586b-4731-9ad0-576056ed2749.png)
+```
+tar xzf hadoop-<version>.tar.gz
+```
+![image](https://user-images.githubusercontent.com/79612461/133347478-e6ff93a5-b6cb-42e3-b726-375797534364.png)
+```
+mv hadoop-<version> hadoop
+```
+Implementación de Hadoop de nodo único
+```
+sudo nano .bashrc
+```
+![image](https://user-images.githubusercontent.com/79612461/133347894-71f237bc-857e-41df-868a-4b58ae04284f.png)
+```
+source ~/.bashrc
+```
+```
+sudo nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
+```
+![image](https://user-images.githubusercontent.com/79612461/133348046-3936b827-6c99-4c8d-8451-7a3676770b66.png)
+```
+cd hadoop
+mkdir tmpdata
+chmod 777 tmpdata
+```
+![image](https://user-images.githubusercontent.com/79612461/133348269-acf90553-48af-427a-abad-eaef683d162e.png)
+```
+sudo nano $HADOOP_HOME/etc/hadoop/core-site.xml
+```
+![image](https://user-images.githubusercontent.com/79612461/133348565-1fc922a7-2c13-42aa-a6ff-8d320dba67f0.png)
 
-##
+```
+mkdir -p ~/hadoopdata/hdfs/namenode
+mkdir -p ~/hadoopdata/hdfs/datanode
+```
+```
+sudo nano $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+```
+![image](https://user-images.githubusercontent.com/79612461/133348767-f8f79844-1f48-46d2-96d9-677867191ef2.png)
+
+```
+sudo nano $HADOOP_HOME/etc/hadoop/mapred-site.xml
+```
+![image](https://user-images.githubusercontent.com/79612461/133348863-dcefa798-5fae-454e-bbce-c0f8f5a54071.png)
+
+```
+```
+```
+## 
