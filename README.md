@@ -1,6 +1,54 @@
 # proyect-big-data-analytics
 This repository contains information from the BigDataAnalytics project! Welcome
 
+## punto 1 ¿Qué resultados generó el programa y cuales son los pasos MapReduce que implementa?
+
+Como resultado se obtiene el log con la ejecución de los pasos de MapReaduce.
+
+![image](https://user-images.githubusercontent.com/79612461/133517654-6819c86b-e3af-40bd-86a6-d2040fb230d4.png)
+
+### Pasos de MapReduce
+1. Una vez se ejecuta el programa MapReduce sobre un conjunto de ficheros guardados en el HDFS, se inicia el proceso de Stage Map donde el metodo JobResourceUploader desabilita la codificación de borrado del directorio output; luego procesa los datos con mapper y los distribuye en conjutos de datos mas pequeños.
+2. Luego se inicia el proceso de shuffle donde por medio de la función jobSubmitter genera un token de trabajo y copia los datos en todos los nodos del cluster (dataNode) con el detalle de la tarea a realizar conforme a parametro de entrada.  
+3. Por ultimo, se inicia la etapa ruduce por medio de la función Job, esta toma los datos que llegan del stage map, los combina y genera un nuevo conjunto de datos. Al finalizar la trabajo asignado, se recopilan los datos y lo envian de vuelta al servidor hadoop.
+
+![image](https://user-images.githubusercontent.com/79612461/133502005-d65de1a2-6b08-4777-9a79-b66e82f7587e.png)
+
+## punto 2 workcount ¿Qué resultados generó el programa y cuales son los pasos MapReduce que implementa?
+
+Como resultados de ejecutar los siguientes pasos, se obtiene el conteo de palabras con uso de algoritmo wordcount de MapReduce:
+
+### Ejecución de algoritmo wordcount en archivo ubicado en directorio libros
+```
+hadoop jar hadoop-mapreduce-examples-3.3.1.jar wordcount /libros /output-libros
+```
+![image](https://user-images.githubusercontent.com/79612461/133526655-b3ccdd19-a968-4644-aad1-8ed769dc9f83.png)
+
+### Busqueda de conjunto de datos en directorio output-libros generados despues de ejecutar pasos de MapReduce
+```
+hdfs dfs -ls /output-libros
+```
+![image](https://user-images.githubusercontent.com/79612461/133527183-63c4a8dc-be7b-45ad-bd83-9f9d4deafa33.png)
+
+![image](https://user-images.githubusercontent.com/79612461/133527095-0c46a9b8-2f73-4218-be6a-f529b5120720.png)
+
+### Descarga de resultado 
+```
+hdfs dfs -get /output-libros/part-r-00000
+```
+![image](https://user-images.githubusercontent.com/79612461/133526998-07a74758-1968-4942-bc81-1d3a0b63a0b1.png)
+
+### Visualización de nuevo conjunto de datos generados 
+```
+cat part-r-00000
+```
+![image](https://user-images.githubusercontent.com/79612461/133527049-8e31dae7-12f2-4c1b-be8a-44a9bf2b58c8.png)
+
+## punto 3
+## punto 4
+
+# Instalaciones
+
 ## Instalación de ubuntu (base)
 
 ### Creación de usurio hadoop en ubuntu
@@ -156,8 +204,6 @@ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar grep i
 ![image](https://user-images.githubusercontent.com/79612461/133352393-f42bee21-0d34-41b8-b3b2-2fa58fcd1c44.png)
 ![image](https://user-images.githubusercontent.com/79612461/133352354-f4eaad0b-fab0-48de-9fc8-12f6eaab49ca.png)
 
-# punto 1 ¿Qué resultados generó el programa y cuales son los pasos MapReduce que implementa?
-# punto 2 workcount ¿Qué resultados generó el programa y cuales son los pasos MapReduce que implementa?
 
 ## Instalacion Spark (parte 3)
 ```
@@ -205,6 +251,8 @@ start-worker.sh spark://LAP-WIN-01166.localdomain:7077
 ```
 ![image](https://user-images.githubusercontent.com/79612461/133361341-87b26a27-9a0b-4d97-90ef-f10d652b4125.png)
 ![image](https://user-images.githubusercontent.com/79612461/133361420-ea8744d6-01a8-49fc-9577-c81ea7fc10a9.png)
+
+
 
 ## Instalación Anaconda 
 ## Jupyter
