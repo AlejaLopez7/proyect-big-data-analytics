@@ -153,26 +153,54 @@ bin/hdfs dfs -put etc/hadoop/*.xml input
 ```
 bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar grep input output 'dfs[a-z.]+'
 ```
-```
-```
-```
-```
-``````
-```
-```
-```
-```
+![image](https://user-images.githubusercontent.com/79612461/133352393-f42bee21-0d34-41b8-b3b2-2fa58fcd1c44.png)
+![image](https://user-images.githubusercontent.com/79612461/133352354-f4eaad0b-fab0-48de-9fc8-12f6eaab49ca.png)
 
+# punto 1 ¿Qué resultados generó el programa y cuales son los pasos MapReduce que implementa?
+# punto 2 workcount ¿Qué resultados generó el programa y cuales son los pasos MapReduce que implementa?
 
 ## Instalacion Spark (parte 3)
+```
+sudo apt install scala git -y
+java -version; javac -version; scala -version; git --version
+```
+![image](https://user-images.githubusercontent.com/79612461/133352999-611b31d3-6a3b-4494-820e-07e22516d725.png)
+![image](https://user-images.githubusercontent.com/79612461/133353057-2db191f9-d1d6-4721-ba8b-6616eac7032e.png)
 
+### Ingresar y descargar la ultima versión con el comando wget
 
+https://spark.apache.org/downloads.html
+```
+wget https://downloads.apache.org/spark/spark-<version>/spark-<version>-bin-hadoop3.2.tgz
+```
+![image](https://user-images.githubusercontent.com/79612461/133353128-74aff860-682e-4d29-ac27-c045d00853bd.png)
+```
+tar xvf spark-<version>.tar.gz
+```
+![image](https://user-images.githubusercontent.com/79612461/133353193-a02133c9-66b9-48fb-8737-7b3f7bbb33ff.png)
 
 ```
+sudo mv spark-<version>-bin-hadoop2.7 /opt/spark
+which python3
 ```
+![image](https://user-images.githubusercontent.com/79612461/133353358-09e6ae85-c8a8-47a9-a0f2-c80e8386c5ee.png)
+
 ```
+nano .profile
 ```
+![image](https://user-images.githubusercontent.com/79612461/133353440-392e152f-cbcb-49ee-ab6d-afccb32bd482.png)
 ```
+source ~/.profile
+```
+### Inicializar spark
+```
+start-master.sh
+```
+![image](https://user-images.githubusercontent.com/79612461/133353596-a5b0c3c1-ce3b-477c-b07e-048f8166f39e.png)
+![image](https://user-images.githubusercontent.com/79612461/133353636-548cf7a3-a2e4-4c4c-bccf-45043afb8fa1.png)
+
+### Inicialiación servidores cloud
 ```
 
+```
 
