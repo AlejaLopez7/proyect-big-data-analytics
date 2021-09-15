@@ -1,7 +1,7 @@
 # proyect-big-data-analytics
 This repository contains information from the BigDataAnalytics project! Welcome
 
-## Instalación de ubuntu
+## Instalación de ubuntu (base)
 
 ### Creación de usurio hadoop en ubuntu
 ![image](https://user-images.githubusercontent.com/79612461/133336179-8d141879-3d21-4270-80ef-67dc5b7ad0d7.png)
@@ -22,7 +22,7 @@ java -version; javac -version
 ```
 ![image](https://user-images.githubusercontent.com/79612461/133345356-8a8e38d0-3eac-419b-aae8-adca713e296a.png)
 
-## Configuración ssh y llave cifrada
+### Configuración ssh y llave cifrada
 ```
 sudo apt install openssh-server openssh-client -y
 ```
@@ -63,8 +63,8 @@ ssh localhost
 ```
 ssh localhost
 ```
-## Instalación de hadoop
-Ingresar y descargar la ultima version con el comando wget
+## Instalación de hadoop (parte 1)
+### Ingresar y descargar la ultima version con el comando wget
 ![image](https://user-images.githubusercontent.com/79612461/133347168-b7348919-9ac1-48ab-a701-91024c862155.png)
 ![image](https://user-images.githubusercontent.com/79612461/133347174-d8fe0eec-cb8d-4ce6-a345-5d9712f1a2ae.png)
 ```
@@ -78,7 +78,7 @@ tar xzf hadoop-<version>.tar.gz
 ```
 mv hadoop-<version> hadoop
 ```
-Implementación de Hadoop de nodo único
+### Implementación de Hadoop de nodo único
 ```
 sudo nano .bashrc
 ```
@@ -115,7 +115,64 @@ sudo nano $HADOOP_HOME/etc/hadoop/mapred-site.xml
 ```
 ![image](https://user-images.githubusercontent.com/79612461/133348863-dcefa798-5fae-454e-bbce-c0f8f5a54071.png)
 
+### Modificación archivo yarn
+```
+sudo nano $HADOOP_HOME/etc/hadoop/yarn-site.xml
+```
+![image](https://user-images.githubusercontent.com/79612461/133349065-69d09316-96ff-47e1-8b71-0bb03c61eec7.png)
+
+### Format HDFS NameNode
+```
+hdfs namenode -format
+```
+![image](https://user-images.githubusercontent.com/79612461/133349245-fded655a-b572-40c6-bec8-31d978796bae.png)
+![image](https://user-images.githubusercontent.com/79612461/133349335-ee1e79eb-542f-4d78-8c07-337df12f7dc9.png)
+
+```
+start-dfs.sh
+start-yarn.sh
+jps
+```
+![image](https://user-images.githubusercontent.com/79612461/133349579-3512de8e-56f5-4090-9463-cd5636dc324a.png)
+
+### Acceso a Hadoop UI por medio del navegador de Windows
+```
+http://localhost:9870
+```
+![image](https://user-images.githubusercontent.com/79612461/133349750-0012e914-a27d-46fd-be67-2f60d0b2115a.png)
+![image](https://user-images.githubusercontent.com/79612461/133349825-5293c7fa-dcab-49dc-b536-edaf555d8c67.png)
+
+## Instalación de mapreduce (parte 2)
+```
+cd hadoop
+bin/hdfs dfs -mkdir /user
+bin/hdfs dfs -mkdir /user/<username>
+bin/hdfs dfs -mkdir input
+bin/hdfs dfs -put etc/hadoop/*.xml input
+```
+```
+bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar grep input output 'dfs[a-z.]+'
 ```
 ```
 ```
-## 
+```
+```
+``````
+```
+```
+```
+```
+
+
+## Instalacion Spark (parte 3)
+
+
+
+```
+```
+```
+```
+```
+```
+
+
