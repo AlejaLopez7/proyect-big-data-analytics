@@ -199,8 +199,12 @@ start-master.sh
 ![image](https://user-images.githubusercontent.com/79612461/133353596-a5b0c3c1-ce3b-477c-b07e-048f8166f39e.png)
 ![image](https://user-images.githubusercontent.com/79612461/133353636-548cf7a3-a2e4-4c4c-bccf-45043afb8fa1.png)
 
-### Inicialiación servidores cloud
+### Inicialiación servidores esclavo
 ```
-
+start-worker.sh spark://LAP-WIN-01166.localdomain:7077
 ```
+![image](https://user-images.githubusercontent.com/79612461/133361341-87b26a27-9a0b-4d97-90ef-f10d652b4125.png)
+![image](https://user-images.githubusercontent.com/79612461/133361420-ea8744d6-01a8-49fc-9577-c81ea7fc10a9.png)
 
+## Instalación Anaconda 
+## Jupyter
