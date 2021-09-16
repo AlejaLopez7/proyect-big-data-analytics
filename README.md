@@ -15,7 +15,7 @@ Como resultado se obtiene el log con la ejecución de los pasos de MapReaduce.
 
 ![image](https://user-images.githubusercontent.com/79612461/133502005-d65de1a2-6b08-4777-9a79-b66e82f7587e.png)
 
-## punto 2 workcount ¿Qué resultados generó el programa y cuales son los pasos MapReduce que implementa?
+## punto 2 wordcount ¿Qué resultados generó el programa y cuales son los pasos MapReduce que implementa?
 
 Como resultados de ejecutar los siguientes pasos, se obtiene el conteo de palabras con uso de algoritmo wordcount de MapReduce:
 
@@ -46,17 +46,34 @@ cat part-r-00000
 ![image](https://user-images.githubusercontent.com/79612461/133527049-8e31dae7-12f2-4c1b-be8a-44a9bf2b58c8.png)
 
 ## Uso de Spark 
-### 
+### wordcount: realizar cálculos de conteo de palabras sin tener en cuenta mayúsculas/minúsculas y signos de puntuación
 
+## Parte 4
 
+Se clona el siguiente repositorio
+```
+git clone https://github.com/bigdata-unbosque/SparkTutorial.git
+```
+Se descarga, se descomprime y se carga archivo en directorio data de repositorio clonado
 
+![image](https://user-images.githubusercontent.com/79612461/133545458-d785e93d-a0bf-44c6-913c-01f0d919fc90.png)
 
+Se instala Anacando (ver instalación Anaconda) y se ejecuta el siguente comando en el directorio donde reposa el repositorio clonado
+```
+jupyter lab --ip=0.0.0.0
+```
 
+![image](https://user-images.githubusercontent.com/79612461/133544355-37295cec-50f7-4a80-bb09-532fc9831e92.png)
 
+Ingresar a navegador web y con la siguiente instrucción se debe poder visualizar el repositorio clonado 
+```
+http://127.0.0.1:8888/lab
+```
+![image](https://user-images.githubusercontent.com/79612461/133545792-90f149f4-bae9-42dc-b675-7058f0f46e7e.png)
 
+### Análisis de spark-basics.ipynb
 
-
-## punto 4
+### Análisis de park-data-analysis.ipynb
 
 # Instalaciones
 
