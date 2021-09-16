@@ -1,7 +1,8 @@
 # proyect-big-data-analytics
 This repository contains information from the BigDataAnalytics project! Welcome
 
-## punto 1 ¿Qué resultados generó el programa y cuales son los pasos MapReduce que implementa?
+## Uso de MapReduce 
+### punto 1 ¿Qué resultados generó el programa y cuales son los pasos MapReduce que implementa?
 
 Como resultado se obtiene el log con la ejecución de los pasos de MapReaduce.
 
@@ -44,12 +45,57 @@ cat part-r-00000
 ```
 ![image](https://user-images.githubusercontent.com/79612461/133527049-8e31dae7-12f2-4c1b-be8a-44a9bf2b58c8.png)
 
-## punto 3
+## Uso de Spark 
+### 
+
+
+
+
+
+
+
+
+
 ## punto 4
 
 # Instalaciones
 
-## Instalación de ubuntu (base)
+## Instalación entorno de virtualización Windows
+
+### Ejecutar cmd como administrador
+![image](https://user-images.githubusercontent.com/79612461/133538210-a1ade41b-9995-4998-9124-658175ecb6a3.png)
+
+```
+wsl --install
+```
+![image](https://user-images.githubusercontent.com/79612461/133538069-ce1fdc32-ee5c-4cd6-8a3c-f43384c40152.png)
+
+## Instalación entorno virtual ubuntu
+
+Abrir Microsoft Store buscar Ubuntu e instalar Ubuntu 20.04 LTS (no se requiere iniciar sesión)
+
+![image](https://user-images.githubusercontent.com/79612461/133538345-eb3165a6-a610-44c1-837c-194215d0b4c7.png)
+
+### Configuración archivo .wslconfig
+
+Ir a la ruta del usuario
+```
+C:\Users\<user>
+```
+Crear archivo con el nombre .wslconfig (eliminar extensión .txt y confirmar que el archivo no tiene extensión) 
+
+![image](https://user-images.githubusercontent.com/79612461/133538633-e68aedba-7814-4bf2-91ca-18448f7383b5.png)
+
+Dentro del archivo .wslconfig copiar 
+```
+[wsl2]
+memory=4GB
+processors=2
+localhostForwarding=true
+```
+![image](https://user-images.githubusercontent.com/79612461/133538769-1bf96548-b0b1-4e45-8ebd-b79b2ba49fc8.png)
+
+### NOTA: La etiqueta memory puede variar entre 2GB y 4GB
 
 ### Creación de usurio hadoop en ubuntu
 ![image](https://user-images.githubusercontent.com/79612461/133336179-8d141879-3d21-4270-80ef-67dc5b7ad0d7.png)
@@ -252,7 +298,16 @@ start-worker.sh spark://LAP-WIN-01166.localdomain:7077
 ![image](https://user-images.githubusercontent.com/79612461/133361341-87b26a27-9a0b-4d97-90ef-f10d652b4125.png)
 ![image](https://user-images.githubusercontent.com/79612461/133361420-ea8744d6-01a8-49fc-9577-c81ea7fc10a9.png)
 
-
-
 ## Instalación Anaconda 
-## Jupyter
+```
+wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
+bash Anaconda3-2021.05-Linux-x86_64.sh
+```
+![image](https://user-images.githubusercontent.com/79612461/133535276-c53439b0-0bbe-4ecf-8301-780f5a62b529.png)
+
+## Instalación Jupyter
+```
+sudo apt install jupyter-core
+```
+
+![image](https://user-images.githubusercontent.com/79612461/133535992-a54eba73-fcc7-4582-a178-4e519d85ce32.png)
