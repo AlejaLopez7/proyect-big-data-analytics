@@ -1,7 +1,10 @@
 # proyect-big-data-analytics
 This repository contains information from the BigDataAnalytics project! Welcome
 
+---------------------
 ## Uso de MapReduce 
+---------------------
+
 ### punto 1 ¿Qué resultados generó el programa y cuales son los pasos MapReduce que implementa?
 
 Como resultado se obtiene el log con la ejecución de los pasos de MapReaduce.
@@ -9,6 +12,7 @@ Como resultado se obtiene el log con la ejecución de los pasos de MapReaduce.
 ![image](https://user-images.githubusercontent.com/79612461/133517654-6819c86b-e3af-40bd-86a6-d2040fb230d4.png)
 
 ### Pasos de MapReduce
+
 1. Una vez se ejecuta el programa MapReduce sobre un conjunto de ficheros guardados en el HDFS, se inicia el proceso de Stage Map donde el metodo JobResourceUploader desabilita la codificación de borrado del directorio output; luego procesa los datos con mapper y los distribuye en conjutos de datos mas pequeños.
 2. Luego se inicia el proceso de shuffle donde por medio de la función jobSubmitter genera un token de trabajo y copia los datos en todos los nodos del cluster (dataNode) con el detalle de la tarea a realizar conforme a parametro de entrada.  
 3. Por ultimo, se inicia la etapa ruduce por medio de la función Job, esta toma los datos que llegan del stage map, los combina y genera un nuevo conjunto de datos. Al finalizar la trabajo asignado, se recopilan los datos y lo envian de vuelta al servidor hadoop.
@@ -45,8 +49,9 @@ cat part-r-00000
 ```
 ![image](https://user-images.githubusercontent.com/79612461/133527049-8e31dae7-12f2-4c1b-be8a-44a9bf2b58c8.png)
 
+--------------------
 ## Uso de Spark 
-### wordcount: realizar cálculos de conteo de palabras sin tener en cuenta mayúsculas/minúsculas y signos de puntuación
+--------------------
 
 ## Parte 4
 
@@ -58,7 +63,7 @@ Se descarga, se descomprime y se carga archivo en directorio data de repositorio
 
 ![image](https://user-images.githubusercontent.com/79612461/133545458-d785e93d-a0bf-44c6-913c-01f0d919fc90.png)
 
-Se instala Anacando (ver instalación Anaconda) y se ejecuta el siguente comando en el directorio donde reposa el repositorio clonado
+Se instala Anaconda (ver instalación Anaconda) y se ejecuta el siguente comando en el directorio donde reposa el repositorio clonado
 ```
 jupyter lab --ip=0.0.0.0
 ```
@@ -71,11 +76,66 @@ http://127.0.0.1:8888/lab
 ```
 ![image](https://user-images.githubusercontent.com/79612461/133545792-90f149f4-bae9-42dc-b675-7058f0f46e7e.png)
 
+------------------------------------
 ### Análisis de spark-basics.ipynb
+------------------------------------
 
+### Ejecución de conexión con Spark
+![image](https://user-images.githubusercontent.com/79612461/133695079-84a706f2-207b-48de-85b9-1f571229eb2d.png)
+
+![image](https://user-images.githubusercontent.com/79612461/133694987-a5c67f4e-9a2b-442e-be24-399608131a30.png)
+
+### RDD Operations
+
+### Uso de map
+El metodo map retorna un nuevo dataset distribuido, que se forma pasando cada elemento de la entrada (origen) por la función (lambda x: x * 2)
+
+![image](https://user-images.githubusercontent.com/79612461/133710886-c2a3e27f-26b1-4c88-bbf5-c706ea0b1159.png)
+
+
+Em metodo filter retorna un dataset con los elementos que son verdaderos despues de pasar por la función (lambda x: x * 2)
+
+![image](https://user-images.githubusercontent.com/79612461/133711742-c400d0a8-5c67-41f7-a785-152d0fac42dd.png)
+
+Con el uso de map se retorna un nuevo dataset con el resultado de la func división de palabras de texto (lambda x: x.split(" ")), retornando una matriz con los primeros 2 elementos del dataset.
+
+![image](https://user-images.githubusercontent.com/79612461/133712679-bb93c89e-a68b-4f0e-9e15-07663e848a46.png)
+
+Flapmap es un map con esteroides, cada elemento de entrada puede ser mapeado por 0 o mas elementos de salida (output) retornando una secuencia de elementos.
+
+![image](https://user-images.githubusercontent.com/79612461/133713595-b05ff842-aa28-4024-aeba-60525baa371c.png)
+
+ReduceByKey agrupa por clave los elementos del dataset
+
+![image](https://user-images.githubusercontent.com/79612461/133714397-9fdf7bba-1c56-4b76-bc76-46274d40a378.png)
+
+Con sortByKey se ordena el dataset usando la clave. En este caso de manera ascendente
+
+![image](https://user-images.githubusercontent.com/79612461/133715429-2e2dcafa-5207-488f-ab86-fdf0e615362d.png)
+
+Uso de MapReaduce para ver las 10 palabras mas frecuentes
+
+![image](https://user-images.githubusercontent.com/79612461/133716179-5f86b9d0-38bb-4cb3-9b80-4ebdc1cd5a07.png)
+
+-----------------------------------------
 ### Análisis de park-data-analysis.ipynb
+-----------------------------------------
 
+Despues de descargar y contar el numero de registros del dataset -> stocks_price_final.csv, con printSchema() se imprimen las columnas con su tipo de dato identificado;
+
+![image](https://user-images.githubusercontent.com/79612461/133718345-16e17c06-9bbe-4611-81fe-6729cfa0da0a.png)
+
+Luego se define el esquema Spark del dataset con el uso de StructField para definir el nombre de las columnas, el tipo de dato, entre otros 
+
+![image](https://user-images.githubusercontent.com/79612461/133719064-352bb568-3e45-4541-a09e-5b6826b01066.png)
+
+y con el metodo spark.read.csv() lee los datos y le da estructura al esquema
+
+![image](https://user-images.githubusercontent.com/79612461/133719115-20c46ca1-e952-495b-949b-b26c40945598.png)
+
+------------------------------------------------------------------------------------------------------------------
 # Instalaciones
+------------------------------------------------------------------------------------------------------------------
 
 ## Instalación entorno de virtualización Windows
 
@@ -321,6 +381,21 @@ wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
 bash Anaconda3-2021.05-Linux-x86_64.sh
 ```
 ![image](https://user-images.githubusercontent.com/79612461/133535276-c53439b0-0bbe-4ecf-8301-780f5a62b529.png)
+
+### Complementos anaconda
+
+```
+conda install -c cyclus java-jdk
+```
+
+![image](https://user-images.githubusercontent.com/79612461/133692215-7b7697eb-f604-4e40-a1b0-d69b30d9b0a1.png)
+
+### Configuración entorno python compatible con Spark y Anaconda en .profile
+
+```
+nano .profile
+```
+![image](https://user-images.githubusercontent.com/79612461/133694483-fd4ea948-4ea9-4a42-90ce-15c4d9c144da.png)
 
 ## Instalación Jupyter
 ```
