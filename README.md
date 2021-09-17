@@ -133,6 +133,12 @@ y con el metodo spark.read.csv() lee los datos y le da estructura al esquema
 
 ![image](https://user-images.githubusercontent.com/79612461/133719115-20c46ca1-e952-495b-949b-b26c40945598.png)
 
+Copia de archivos .ipynb en directorio compartido entre Ubuntu y Windowa
+```
+sudo cp -R .ipynb_checkpoints/ /mnt/c/Users/alejandra.lopez/Documents/
+```
+![image](https://user-images.githubusercontent.com/79612461/133722046-2440890a-e6db-4412-99da-51300e0561ea.png)
+
 ------------------------------------------------------------------------------------------------------------------
 # Instalaciones
 ------------------------------------------------------------------------------------------------------------------
